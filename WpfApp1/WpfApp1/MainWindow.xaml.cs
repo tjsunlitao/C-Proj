@@ -12,9 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MaterialDesignThemes.Wpf;
 
-namespace HelloWorld01
+namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,21 +23,6 @@ namespace HelloWorld01
         public MainWindow()
         {
             InitializeComponent();
-        }
-        List<Window> winList;
-        private void Button1_Click(object sender, RoutedEventArgs e)
-        {
-            winList = new List<Window>();
-            for (int i = 0; i < 15000; i++)
-            {
-                Window w = new Window();
-                winList.Add(w);
-            }
-        }
-
-        private void Button2_Click(object sender, RoutedEventArgs e)
-        {
-            winList.Clear();
         }
     }
 }
