@@ -17,8 +17,8 @@ namespace DelegateExample
             Func<Product> func1 = new Func<Product>(productFactory.MakePizza);
             Func<Product> func2 = new Func<Product>(productFactory.MakeToyCar);
 
-            Box box1 = wrapFactory.wrapFactory(func1);
-            Box box2 = wrapFactory.wrapFactory(func2);
+            Box box1 = wrapFactory.WrapProduct(func1);
+            Box box2 = wrapFactory.WrapProduct(func2);
 
             Console.WriteLine(box1.Product.Name);
             Console.WriteLine(box2.Product.Name);
@@ -39,7 +39,7 @@ class Box
 
 class WrapFactory
 {
-    public Box wrapFactory(Func<Product> getProduct)
+    public Box WrapProduct(Func<Product> getProduct)
     {
         Box box = new Box();
         Product product = getProduct.Invoke();
