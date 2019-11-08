@@ -13,16 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfEventExample
+namespace EventExample1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        private void DataGrid_SelectionChanged()
+        public MainWindow()
         {
-
+            InitializeComponent();
         }
     }
 }

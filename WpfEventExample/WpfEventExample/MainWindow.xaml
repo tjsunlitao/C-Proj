@@ -3,20 +3,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfEventExample"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+
         mc:Ignorable="d"
-        Title="控制面板" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="208*"/>
-            <ColumnDefinition Width="33*"/>
-            <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="511*"/>
-        </Grid.ColumnDefinitions>
-        <Button  Content="Click Me!" Margin="108,135,399,0" VerticalAlignment="Top" Click="ButtonClicked" Height="66" Grid.ColumnSpan="4"/>
-
-        <TextBox x:Name="textBox1" Height="39" Margin="108,54,120,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="4"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="139,258,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2"/>
-
+        Title="控制面板" Height="1200
+        " Width="2800">
+    <Grid Margin="-513,-305,0,0">
+        <Grid.Resources>
+            <Style TargetType="lvc:Separator">
+                <Setter Property="Stroke" Value="#69000000"></Setter>
+                <Setter Property="StrokeThickness" Value=".8"></Setter>
+                <Setter Property="StrokeDashArray" Value="2"></Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid HorizontalAlignment="Center" Height="567" Margin="758,430,0,0" Grid.Row="10" VerticalAlignment="Top" Width="1645" SelectedIndex="10" Grid.RowSpan="10" Grid.Column="10" Grid.ColumnSpan="10"/>
     </Grid>
 </Window>
