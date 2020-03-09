@@ -26,6 +26,9 @@ namespace TASITJ_3005
 
         public FormMain()
         {
+
+            
+            
             string str = System.Windows.Forms.Application.StartupPath;
             Global.PLC_IP_Adress = OperateIniFile.ReadIniData("Setting", " PLC_IP", "", str + "\\Config.ini");
             
@@ -209,7 +212,10 @@ namespace TASITJ_3005
                             new SqlParameter("ProductData_Speed", float.Parse(seriesPoint4.ValueY[0].ToString())),
                             new SqlParameter("ProductData_Timer", float.Parse(seriesPoint1.ValueX.ToString())),
                             new SqlParameter("Sort", i),
-                            new SqlParameter("CreateTime", s_creattime));
+                            new SqlParameter("CreateTime", s_creattime)
+                          
+                            
+                            ) ;
                     }
                     Global.dt = dt;
                 }
