@@ -49,6 +49,7 @@ namespace TASITJ_3005
         /// 保存数据库链接字符串
         /// </summary>
         public static string DataConnectionString = "ConnectionString";
+    
 
         #endregion
 
@@ -60,6 +61,7 @@ namespace TASITJ_3005
         public DbHelper()
         {
             _ConnectionStringSettings = ConfigurationManager.ConnectionStrings[DataConnectionString];
+           
 
             // 如果连接字符串对象不为空，则创建数据库操作工厂
             if (_ConnectionStringSettings != null)
@@ -195,7 +197,7 @@ namespace TASITJ_3005
         /// <returns>影响的记录数</returns>
         public int ExecuteNonQuery(CommandType commandType, string sql, params DbParameter[] para)
         {
-            CommandDelegate cd = delegate(DbCommand cmd)
+            CommandDelegate cd = delegate (DbCommand cmd)
             {
                 return cmd.ExecuteNonQuery();
             };
@@ -222,7 +224,7 @@ namespace TASITJ_3005
         /// <returns>影响的记录数</returns>
         public int ExecuteNonQuery(CommandType commandType, string sql, IList<DbParameter> para)
         {
-            CommandDelegate cd = delegate(DbCommand cmd)
+            CommandDelegate cd = delegate (DbCommand cmd)
             {
                 return cmd.ExecuteNonQuery();
             };
@@ -241,7 +243,7 @@ namespace TASITJ_3005
         /// <returns></returns>
         public bool ReadData(string sql, DbDataReadDelegate readDelegate)
         {
-            CommandDelegate cd = delegate(DbCommand cmd)
+            CommandDelegate cd = delegate (DbCommand cmd)
             {
                 using (DbDataReader dbReader = cmd.ExecuteReader())
                 {
@@ -263,9 +265,9 @@ namespace TASITJ_3005
         /// <param name="sql">Sql语句</param>
         /// <param name="para">查询参数</param>
         /// <returns>DataTable</returns>
-        public DataTable CreateDataTable(string sql,  IList<DbParameter> para)
+        public DataTable CreateDataTable(string sql, IList<DbParameter> para)
         {
-            CommandDelegate cd = delegate(DbCommand cmd)
+            CommandDelegate cd = delegate (DbCommand cmd)
             {
                 using (DbDataReader dr = cmd.ExecuteReader())
                 {
@@ -284,7 +286,7 @@ namespace TASITJ_3005
         /// <returns></returns>
         public DataTable CreateDataTable(string sql, params DbParameter[] para)
         {
-            CommandDelegate cd = delegate(DbCommand cmd)
+            CommandDelegate cd = delegate (DbCommand cmd)
             {
                 using (DbDataReader dr = cmd.ExecuteReader())
                 {
@@ -321,7 +323,7 @@ namespace TASITJ_3005
         /// <returns>DataSet结果集</returns>
         public DataSet CreateDataSet(CommandType commandType, string sql, params DbParameter[] para)
         {
-            CommandDelegate cd = delegate(DbCommand cmd)
+            CommandDelegate cd = delegate (DbCommand cmd)
             {
                 using (DbDataAdapter da = _DbProviderFactory.CreateDataAdapter())
                 {
@@ -347,7 +349,7 @@ namespace TASITJ_3005
         /// <returns>string类型的字符串</returns>
         public string GetValue(string sql, params DbParameter[] para)
         {
-            CommandDelegate cd = delegate(DbCommand cmd)
+            CommandDelegate cd = delegate (DbCommand cmd)
             {
                 return cmd.ExecuteScalar();
             };
@@ -367,7 +369,7 @@ namespace TASITJ_3005
         /// <returns>对象object</returns>
         public object GetObject(string sql, IList<DbParameter> para)
         {
-            CommandDelegate cd = delegate(DbCommand cmd)
+            CommandDelegate cd = delegate (DbCommand cmd)
             {
                 return cmd.ExecuteScalar();
             };
@@ -381,7 +383,7 @@ namespace TASITJ_3005
         /// <returns></returns>
         public object GetObject(string sql, params DbParameter[] para)
         {
-            CommandDelegate cd = delegate(DbCommand cmd)
+            CommandDelegate cd = delegate (DbCommand cmd)
             {
                 return cmd.ExecuteScalar();
             };
