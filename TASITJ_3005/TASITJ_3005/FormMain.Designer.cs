@@ -357,6 +357,7 @@
             this.chartControl1.ChartPanel.Legend.Visible = false;
             this.chartControl1.ChartPanel.Name = "PrimaryPanel";
             this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartControl1.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
             this.chartControl1.Location = new System.Drawing.Point(0, 25);
             this.chartControl1.Name = "chartControl1";
             this.chartControl1.Size = new System.Drawing.Size(1368, 760);
